@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Button } from '@material-ui/core';
+import { useStyles } from './App.style';
 
-const App: React.FC = () => {
+export interface IProps {
+  /** Set margin of the entire application */
+  margin?: number;
+};
+
+const defaultProps = {
+  margin: 10
+};
+
+const App: React.FC<IProps> = (props) => {
+  const classes = useStyles(props);
+  document.title = 'Title is property, it is not a function'
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.app}>
+      <Button variant='contained' color='primary'>
+        Upload a document
+      </Button>
     </div>
   );
-}
+};
+
+App.defaultProps = defaultProps;
 
 export default App;
