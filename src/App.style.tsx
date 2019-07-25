@@ -4,7 +4,11 @@ import { IProps } from './App';
 export const useStyles = (props: IProps) => {
   return mergeStyleSets({
     app: {
-      margin: props.margin
+      margin: props.margin,
+      height: '100vh'
+    },
+    appInner: {
+      height: '100%'
     }
   });
 }
