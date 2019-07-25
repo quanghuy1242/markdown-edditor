@@ -45,11 +45,23 @@ const App: React.FC<IProps> = (props) => {
           />
         </Stack.Item>
         <Stack.Item>
-          <PrimaryButton
-            text='Show current value'
-            disabled={!isEditorReady}
-            onClick={() => alert(valueGetter.current())}
-          />
+          <Stack
+            horizontal
+            className={classes.actionBar} 
+            horizontalAlign='start'
+            tokens={{ childrenGap: '0.5rem' }}
+          >
+            <PrimaryButton
+              text='Show current value'
+              disabled={!isEditorReady}
+              onClick={() => alert(valueGetter.current())}
+            />
+            <PrimaryButton
+              text='Another button'
+              disabled={!isEditorReady}
+              onClick={() => alert(valueGetter.current())}
+            />
+          </Stack>
         </Stack.Item>
       </Stack>
     </Fabric>

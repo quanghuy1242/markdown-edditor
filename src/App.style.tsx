@@ -9,6 +9,9 @@ export const useStyles = (props: IProps) => {
     },
     appInner: {
       height: '100%'
+    },
+    actionBar: {
+      margin: '0.5rem'
     }
   });
 }
