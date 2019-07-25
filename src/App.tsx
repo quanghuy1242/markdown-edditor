@@ -25,7 +25,7 @@ const App: React.FC = () => {
         <Stack.Item>
           <Toolbar />
         </Stack.Item>
-        <Stack.Item disableShrink grow={3}>
+        <Stack.Item disableShrink grow>
           <Editor
             language='markdown'
             value='# Markdown Editor Preview'
