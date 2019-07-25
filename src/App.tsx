@@ -6,21 +6,10 @@ import { Toolbar } from './Components';
 
 initializeIcons();
 
-export interface IProps {
-  /**
-   * Set margin of the entire application
-   */
-  margin?: number;
-};
-
-const defaultProps = {
-  margin: 0
-};
-
-const App: React.FC<IProps> = (props) => {
+const App: React.FC = () => {
   const [isEditorReady, setIsEditorReady] = useState<boolean>(false);
   const valueGetter = useRef<any>();
-  const classes = useStyles(props);
+  const classes = useStyles();
   const options = {
     fontFamily: '"Roboto Mono", monospace'
   };
@@ -67,7 +56,5 @@ const App: React.FC<IProps> = (props) => {
     </Fabric>
   );
 };
-
-App.defaultProps = defaultProps;
 
 export default App;
