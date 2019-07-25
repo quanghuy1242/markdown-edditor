@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
+import { PrimaryButton, Fabric } from 'office-ui-fabric-react';
 import { useStyles } from './App.style';
 
 export interface IProps {
@@ -15,11 +15,11 @@ const App: React.FC<IProps> = (props) => {
   const classes = useStyles(props);
   document.title = 'Title is property, it is not a function'
   return (
-    <div className={classes.app}>
-      <Button variant='contained' color='primary'>
+    <Fabric className={classes.app}>
+      <PrimaryButton>
         Upload a document
-      </Button>
-    </div>
+      </PrimaryButton>
+    </Fabric>
   );
 };
 
