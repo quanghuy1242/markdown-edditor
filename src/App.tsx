@@ -12,7 +12,8 @@ const App: React.FC = () => {
   const classes = useStyles();
   const options = {
     fontFamily: '"Roboto Mono", monospace',
-    fontSize: '13px'
+    fontSize: '13px',
+    wordWrap: true,
   };
 
   const handleEditorDidMount: EditorDidMount = (_valueGetter: () => string) => {
