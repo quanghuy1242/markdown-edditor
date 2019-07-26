@@ -11,6 +11,7 @@ const Toolbar: React.FC<IProps> = ({ classNames }) => {
       key: 'newItem',
       name: 'New',
       iconProps: { iconName: 'Add' },
+      iconOnly: true,
       subMenuProps: {
         items: [
           {
@@ -24,14 +25,16 @@ const Toolbar: React.FC<IProps> = ({ classNames }) => {
     {
       key: 'saveItem',
       name: 'Save',
-      iconProps: { iconName: 'Save' }
+      iconProps: { iconName: 'Save' },
+      iconOnly: true,
     }
   ];
   const farItems: ICommandBarItemProps[] = [
     {
       key: 'export',
       name: 'Export',
-      iconProps: { iconName: 'Export' }
+      iconProps: { iconName: 'Export' },
+      iconOnly: true,
     }
   ];
 

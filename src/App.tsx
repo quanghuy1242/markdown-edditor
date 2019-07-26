@@ -23,7 +23,7 @@ const App: React.FC = () => {
     <Fabric className={classes.app}>
       <Stack className={classes.appInner}>
         <Stack.Item>
-          <Toolbar />
+          <Toolbar classNames={classes.toolbar} />
         </Stack.Item>
         <Stack.Item disableShrink grow>
           <Editor
@@ -32,25 +32,6 @@ const App: React.FC = () => {
             editorDidMount={handleEditorDidMount}
             options={options}
           />
-        </Stack.Item>
-        <Stack.Item>
-          <Stack
-            horizontal
-            className={classes.actionBar} 
-            horizontalAlign='start'
-            tokens={{ childrenGap: '0.5rem' }}
-          >
-            <PrimaryButton
-              text='Show current value'
-              disabled={!isEditorReady}
-              onClick={() => alert(valueGetter.current())}
-            />
-            <PrimaryButton
-              text='Another button'
-              disabled={!isEditorReady}
-              onClick={() => alert(valueGetter.current())}
-            />
-          </Stack>
         </Stack.Item>
       </Stack>
     </Fabric>
