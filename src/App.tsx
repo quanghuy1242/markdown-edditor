@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { PrimaryButton, Fabric, Stack, initializeIcons } from 'office-ui-fabric-react';
+import { Fabric, Stack, initializeIcons } from 'office-ui-fabric-react';
 import Editor, { EditorDidMount } from '@monaco-editor/react';
 import { useStyles } from './App.style';
 import { Toolbar } from './Components';
@@ -23,7 +23,7 @@ const App: React.FC = () => {
     <Fabric className={classes.app}>
       <Stack className={classes.appInner}>
         <Stack.Item>
-          <Toolbar classNames={classes.toolbar} />
+          <Toolbar classNames={classes.toolbar} disable={!isEditorReady} />
         </Stack.Item>
         <Stack.Item disableShrink grow>
           <Editor
