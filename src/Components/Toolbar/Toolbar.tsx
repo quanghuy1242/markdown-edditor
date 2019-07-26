@@ -14,19 +14,10 @@ const Toolbar: React.FC<IProps> = ({ classNames, disable }) => {
   const items: ICommandBarItemProps[] = [
     {
       key: 'newItem',
-      name: 'New',
-      iconProps: { iconName: 'Add' },
+      name: 'New Markdown Document',
+      iconProps: { iconName: 'Document' },
       iconOnly: true,
-      disabled: disable,
-      subMenuProps: {
-        items: [
-          {
-            key: 'newMarkdownDocument',
-            name: 'New Markdown Document',
-            iconProps: { iconName: 'Document' }
-          }
-        ]
-      }
+      disabled: disable
     },
     {
       key: 'saveItem',
