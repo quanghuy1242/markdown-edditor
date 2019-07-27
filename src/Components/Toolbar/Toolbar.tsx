@@ -182,7 +182,7 @@ const Toolbar: React.FC<IProps> = ({ classNames }) => {
     {
       key: 'preview',
       name: 'Preview',
-      iconProps: { iconName: isToggle ? 'ErrorBadge': 'View' },
+      iconProps: { iconName: isToggle ? 'Hide': 'View' },
       iconOnly: true,
       disabled: !isEditorReadi,
       onClick: () => { dispatch({ type: 'TOGGLE', payload: !isToggle }) }
