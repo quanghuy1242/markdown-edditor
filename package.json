@@ -10,6 +10,7 @@
     "@types/react-dom": "16.8.5",
     "@types/react-redux": "^7.1.1",
     "@uifabric/fluent-theme": "^7.0.4",
+    "markdown-it": "^9.0.1",
     "office-ui-fabric-react": "^7.15.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
