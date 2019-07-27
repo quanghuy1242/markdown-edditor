@@ -1,5 +1,5 @@
-import React from 'react';
-import { CommandBar, ICommandBarItemProps, css } from 'office-ui-fabric-react';
+import React, { useState } from 'react';
+import { CommandBar, ICommandBarItemProps, css, Dialog, DialogType, ContextualMenu, DialogFooter, PrimaryButton, DialogContent, Text, Stack } from 'office-ui-fabric-react';
 import { useStyles } from './Toolbar.style';
 import { useSelector, useDispatch } from 'react-redux';
 import { IState } from '../../store/types';
@@ -13,6 +13,9 @@ const Toolbar: React.FC<IProps> = ({ classNames }) => {
   const isToggle = useSelector((state: IState) => state.isTogglePreview);
   const isEditorReadi = useSelector((state: IState) => state.isEditorReady);
   const dispatch = useDispatch();
+
+  const [hideDialog, setHideDialog] = useState<boolean>(true);
+
   const items: ICommandBarItemProps[] = [
     {
       key: 'newItem',
@@ -195,6 +198,14 @@ const Toolbar: React.FC<IProps> = ({ classNames }) => {
       disabled: !isEditorReadi,
     },
     {
+      key: 'info',
+      name: 'Information',
+      iconProps: { iconName: 'Info' },
+      iconOnly: true,
+      disabled: !isEditorReadi,
+      onClick: () => { setHideDialog(false) }
+    },
+    {
       key: 'export',
       name: 'Export',
       iconProps: { iconName: 'Export' },
@@ -210,6 +221,35 @@ const Toolbar: React.FC<IProps> = ({ classNames }) => {
         farItems={farItems}
         className={css(classNames, classes.toolbarWrapper)}
       />
+      <Dialog
+        hidden={hideDialog}
+        onDismiss={() => { setHideDialog(true) }}
+        dialogContentProps={{
+          type: DialogType.normal,
+          title: 'Information',
+        }}
+        modalProps={{
+          styles: { main: { maxWidth: 450 } },
+          dragOptions: {
+            moveMenuItemText: 'Move',
+            closeMenuItemText: 'Close',
+            menu: ContextualMenu
+          }
+        }}
+      >
+        <DialogContent>
+          <Stack tokens={{ childrenGap: '0.5rem' }} horizontalAlign='center'>
+            <Text block variant='xLarge'>Markdown Editor</Text>
+            <Text block>Nguyễn Quang Huy - 2019</Text>
+          </Stack>
+        </DialogContent>
+        <DialogFooter>
+          <PrimaryButton
+            text='Close'
+            onClick={() => setHideDialog(true)}
+          />
+        </DialogFooter>
+      </Dialog>
     </>
   );
 }
