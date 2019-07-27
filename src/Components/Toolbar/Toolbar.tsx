@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
-import { CommandBar, ICommandBarItemProps, css, Dialog, DialogType, ContextualMenu, DialogFooter, PrimaryButton, DialogContent, Text, Stack } from 'office-ui-fabric-react';
+import {
+  CommandBar,
+  ICommandBarItemProps,
+  css,
+  Dialog,
+  DialogType,
+  ContextualMenu,
+  DialogFooter,
+  PrimaryButton,
+  Text,
+  Stack
+} from 'office-ui-fabric-react';
 import { useStyles } from './Toolbar.style';
 import { useSelector, useDispatch } from 'react-redux';
 import { IState } from '../../store/types';
@@ -237,12 +248,14 @@ const Toolbar: React.FC<IProps> = ({ classNames }) => {
           }
         }}
       >
-        <DialogContent>
-          <Stack tokens={{ childrenGap: '0.5rem' }} horizontalAlign='center'>
-            <Text block variant='xLarge'>Markdown Editor</Text>
-            <Text block>Nguyễn Quang Huy - 2019</Text>
-          </Stack>
-        </DialogContent>
+        <Stack
+          tokens={{ childrenGap: '0.5rem' }}
+          horizontalAlign='center'
+          className={classes.dialogContent}
+        >
+          <Text block variant='xLarge'>Markdown Editor</Text>
+          <Text block>Nguyễn Quang Huy - 2019</Text>
+        </Stack>
         <DialogFooter>
           <PrimaryButton
             text='Close'

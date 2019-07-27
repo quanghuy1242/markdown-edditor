@@ -8,6 +8,9 @@ export const useStyles = () => {
           color: 'rgb(50, 49, 48)'
         }
       }
+    },
+    dialogContent: {
+      marginBottom: '1.5rem'
     }
   });
 }
