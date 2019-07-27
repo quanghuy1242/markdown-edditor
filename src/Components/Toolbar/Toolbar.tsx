@@ -43,6 +43,20 @@ const Toolbar: React.FC<IProps> = ({ classNames }) => {
       disabled: !isEditorReadi,
     },
     {
+      key: 'undo',
+      name: 'Undo',
+      iconProps: { iconName: 'Undo' },
+      iconOnly: true,
+      disabled: !isEditorReadi,
+    },
+    {
+      key: 'redo',
+      name: 'Redo',
+      iconProps: { iconName: 'Redo' },
+      iconOnly: true,
+      disabled: !isEditorReadi,
+    },
+    {
       key: 'header',
       name: 'Header',
       iconProps: { iconName: 'EditStyle' },
