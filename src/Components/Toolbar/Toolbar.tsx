@@ -2,7 +2,7 @@ import React from 'react';
 import { CommandBar, ICommandBarItemProps, css } from 'office-ui-fabric-react';
 import { useStyles } from './Toolbar.style';
 import { useSelector, useDispatch } from 'react-redux';
-import { IEditor } from '../../store/dataTypes';
+import { IState } from '../../store/types';
 
 export interface IProps {
   classNames?: string;
@@ -10,8 +10,8 @@ export interface IProps {
 
 const Toolbar: React.FC<IProps> = ({ classNames }) => {
   const classes = useStyles();
-  const isToggle = useSelector((state: IEditor) => state.isTogglePreview);
-  const isEditorReadi = useSelector((state: IEditor) => state.isEditorReady);
+  const isToggle = useSelector((state: IState) => state.isTogglePreview);
+  const isEditorReadi = useSelector((state: IState) => state.isEditorReady);
   const dispatch = useDispatch();
   const items: ICommandBarItemProps[] = [
     {

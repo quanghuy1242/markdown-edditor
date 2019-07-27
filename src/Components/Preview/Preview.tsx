@@ -1,14 +1,15 @@
 import React from 'react';
 import { useStyles } from './Preview.style';
 import { useSelector } from 'react-redux';
-import { IEditor } from '../../store/dataTypes';
+import { IState } from '../../store/types';
 
 const Preview: React.FC = () => {
   const classes = useStyles();
-  const isToggle = useSelector((state: IEditor) => state.isTogglePreview);
+  const isToggle = useSelector((state: IState) => state.isTogglePreview);
+  const value = useSelector((state: IState) => state.value);
   return isToggle ? (
     <div className={classes.previewWrapper}>
-      When I was young!
+      {value}
     </div>
   ) : null;
 }
