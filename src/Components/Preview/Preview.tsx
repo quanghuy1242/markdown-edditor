@@ -11,8 +11,10 @@ const Preview: React.FC = () => {
   const isToggle = useSelector((state: IState) => state.isTogglePreview);
   const value = useSelector((state: IState) => state.value);
   return isToggle ? (
-    <div className={classes.previewWrapper} dangerouslySetInnerHTML={{ __html: md.render(value) }}>
-    </div>
+    <div
+      className={classes.previewWrapper}
+      dangerouslySetInnerHTML={{ __html: md.render(value) }}
+    />
   ) : null;
 }
 
