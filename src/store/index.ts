@@ -1,5 +1,4 @@
 import { createStore } from 'redux';
-import modelReducer from './modelReducer';
+import { reducer } from './reducers';
 
-export default createStore(modelReducer);
-export { toggleIsTogglePreview } from './modelActionCreators';
+export default createStore(reducer);
