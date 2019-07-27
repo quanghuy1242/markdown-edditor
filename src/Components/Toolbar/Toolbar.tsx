@@ -196,7 +196,7 @@ const Toolbar: React.FC<IProps> = ({ classNames }) => {
     },
     {
       key: 'export',
-      name: JSON.stringify(isEditorReadi),
+      name: 'Export',
       iconProps: { iconName: 'Export' },
       iconOnly: true,
       disabled: !isEditorReadi,
