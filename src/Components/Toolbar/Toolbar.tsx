@@ -29,6 +29,13 @@ const Toolbar: React.FC<IProps> = ({ classNames }) => {
 
   const items: ICommandBarItemProps[] = [
     {
+      key: 'logo',
+      iconProps: { iconName: 'MarkDownLanguage' },
+      iconOnly: true,
+      disabled: !isEditorReadi,
+      className: classes.mainLogo
+    },
+    {
       key: 'newItem',
       name: 'New Markdown Document',
       iconProps: { iconName: 'Document' },
