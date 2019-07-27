@@ -14,6 +14,7 @@ const App: React.FC = () => {
     fontFamily: '"Roboto Mono", monospace',
     fontSize: '13px',
     wordWrap: true,
+    value: `# Markdown Editor Preview\nMarkdown Editor Preview\nComming soon...`
   };
 
   const handleEditorDidMount: EditorDidMount = (_valueGetter: () => string) => {
@@ -30,7 +31,6 @@ const App: React.FC = () => {
         <Stack.Item disableShrink grow>
           <Editor
             language='markdown'
-            value='# Markdown Editor Preview'
             editorDidMount={handleEditorDidMount}
             options={options}
           />
