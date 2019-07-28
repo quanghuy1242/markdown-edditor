@@ -9,7 +9,9 @@ import {
   DialogFooter,
   PrimaryButton,
   Text,
-  Stack
+  Stack,
+  IContextualMenuListProps,
+  IRenderFunction
 } from 'office-ui-fabric-react';
 import { useStyles } from './Toolbar.style';
 import { useSelector, useDispatch } from 'react-redux';
@@ -154,6 +156,32 @@ const Toolbar: React.FC<IProps> = ({ classNames }) => {
       iconProps: { iconName: 'Table' },
       iconOnly: true,
       disabled: !isEditorReadi,
+      buttonStyles: {
+        menuIcon: {
+          display: 'none'
+        }
+      },
+      subMenuProps: {
+        items: [
+          // {
+          //   key: 'tableselect',
+          //   name: 'Task List',
+          //   iconProps: { iconName: 'CheckList' },
+          //   iconOnly: true,
+          //   disabled: !isEditorReadi,
+          //   onRender: () => (
+          //     <div style={{ width: 250 }}>Table selecter</div>
+          //   )
+          // },
+          {
+            key: 'manual',
+            name: 'Manual',
+            iconProps: { iconName: 'Table' },
+            iconOnly: true,
+            disabled: !isEditorReadi,
+          }
+        ]
+      },
     },
     {
       key: 'code',
@@ -161,6 +189,11 @@ const Toolbar: React.FC<IProps> = ({ classNames }) => {
       iconProps: { iconName: 'CodeEdit' },
       iconOnly: true,
       disabled: !isEditorReadi,
+      buttonStyles: {
+        menuIcon: {
+          display: 'none'
+        }
+      },
       subMenuProps: {
         items: [
           {
