@@ -4,7 +4,11 @@ import { useSelector } from 'react-redux';
 import { IState } from '../../store/types';
 import MarkdownIt from 'markdown-it';
 
-const md = MarkdownIt();
+const md = MarkdownIt({
+  html: true,
+  linkify: true,
+  typographer: true
+});
 
 const Preview: React.FC = () => {
   const classes = useStyles();
