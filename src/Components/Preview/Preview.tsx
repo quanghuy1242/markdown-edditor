@@ -3,6 +3,8 @@ import { useStyles } from './Preview.style';
 import { useSelector } from 'react-redux';
 import { IState } from '../../store/types';
 import MarkdownIt from 'markdown-it';
+import './github-markdown.css';
+import { css } from '@uifabric/utilities';
 
 const md = MarkdownIt({
   html: true,
@@ -16,7 +18,7 @@ const Preview: React.FC = () => {
   const value = useSelector((state: IState) => state.value);
   return isToggle ? (
     <div
-      className={classes.previewWrapper}
+      className={css(classes.previewWrapper, 'markdown-body')}
       dangerouslySetInnerHTML={{ __html: md.render(value as string) }}
     />
   ) : null;
