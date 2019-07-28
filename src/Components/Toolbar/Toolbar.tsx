@@ -224,13 +224,6 @@ const Toolbar: React.FC<IProps> = ({ classNames }) => {
       onClick: () => { dispatch(togglePreview(!isToggle)) }
     },
     {
-      key: 'documentation',
-      name: 'Documentation',
-      iconProps: { iconName: 'TextDocument' },
-      iconOnly: true,
-      disabled: !isEditorReadi,
-    },
-    {
       key: 'info',
       name: 'Information',
       iconProps: { iconName: 'Info' },
