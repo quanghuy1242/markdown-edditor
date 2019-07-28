@@ -13,7 +13,7 @@ const Preview: React.FC = () => {
   return isToggle ? (
     <div
       className={classes.previewWrapper}
-      dangerouslySetInnerHTML={{ __html: md.render(value) }}
+      dangerouslySetInnerHTML={{ __html: md.render(value as string) }}
     />
   ) : null;
 }

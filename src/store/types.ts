@@ -18,7 +18,7 @@ interface IEditorReady {
 
 interface IUpdateValue {
   type: typeof UPDATE;
-  payload: string;
+  payload: string | undefined;
 }
 
 export type IActionType = 
@@ -29,5 +29,5 @@ export type IActionType =
 export interface IState {
   isTogglePreview: boolean;
   isEditorReady: boolean;
-  value: string;
+  value: string | undefined;
 };

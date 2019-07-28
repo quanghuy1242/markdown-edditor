@@ -14,7 +14,7 @@ export function makeEditorReady(isReady: boolean): IActionType {
   }
 }
 
-export function updateEditorValue(value: string): IActionType {
+export function updateEditorValue(value: string | undefined): IActionType {
   return {
     type: UPDATE,
     payload: value

@@ -14,6 +14,7 @@ import {
 import { useStyles } from './Toolbar.style';
 import { useSelector, useDispatch } from 'react-redux';
 import { IState } from '../../store/types';
+import { togglePreview } from '../../store/actions';
 
 export interface IProps {
   classNames?: string;
@@ -220,7 +221,7 @@ const Toolbar: React.FC<IProps> = ({ classNames }) => {
       iconProps: { iconName: isToggle ? 'Hide': 'View' },
       iconOnly: true,
       disabled: !isEditorReadi,
-      onClick: () => { dispatch({ type: 'TOGGLE', payload: !isToggle }) }
+      onClick: () => { dispatch(togglePreview(!isToggle)) }
     },
     {
       key: 'documentation',
