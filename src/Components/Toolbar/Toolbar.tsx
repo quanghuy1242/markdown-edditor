@@ -39,7 +39,7 @@ const Toolbar: React.FC<IProps> = ({ classNames }) => {
     {
       key: 'newItem',
       name: 'New Markdown Document',
-      iconProps: { iconName: 'Document' },
+      iconProps: { iconName: 'TextDocument' },
       iconOnly: true,
       disabled: !isEditorReadi
     },
