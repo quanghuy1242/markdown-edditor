@@ -6,7 +6,7 @@ export const useStyles = () => {
       padding: '1rem',
       width: '50%',
       overflowY: 'auto',
-      height: 'calc(100vh - 44px - 3rem)'
+      height: 'calc(100vh - 44px - 4rem)'
     }
   });
 }
