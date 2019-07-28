@@ -9,9 +9,7 @@ import {
   DialogFooter,
   PrimaryButton,
   Text,
-  Stack,
-  IContextualMenuListProps,
-  IRenderFunction
+  Stack
 } from 'office-ui-fabric-react';
 import { useStyles } from './Toolbar.style';
 import { useSelector, useDispatch } from 'react-redux';
